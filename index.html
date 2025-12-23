@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy</title>
+    <title>Privacy Policy & Terms of Service</title>
     <style>
         * {
             margin: 0;
@@ -29,11 +29,45 @@
             margin-top: 20px;
         }
         
+        .nav-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .nav-tab {
+            padding: 12px 24px;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #7f8c8d;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .nav-tab.active {
+            color: #3498db;
+            border-bottom: 3px solid #3498db;
+            font-weight: 600;
+        }
+        
+        .nav-tab:hover {
+            color: #3498db;
+        }
+        
+        .content-section {
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
         h1 {
             color: #2c3e50;
             margin-bottom: 10px;
             font-size: 2.2rem;
-            border-bottom: 2px solid #eee;
             padding-bottom: 15px;
         }
         
@@ -51,11 +85,17 @@
             font-size: 1.2rem;
         }
         
+        h4 {
+            color: #2c3e50;
+            margin: 15px 0 8px 0;
+            font-size: 1.1rem;
+        }
+        
         p {
             margin-bottom: 15px;
         }
         
-        ul {
+        ul, ol {
             margin-left: 20px;
             margin-bottom: 15px;
         }
@@ -91,6 +131,18 @@
             margin-bottom: 30px;
         }
         
+        .back-to-top {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .back-to-top a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
         @media (max-width: 768px) {
             body {
                 padding: 10px;
@@ -103,6 +155,17 @@
             h1 {
                 font-size: 1.8rem;
             }
+            
+            .nav-tabs {
+                flex-direction: column;
+            }
+            
+            .nav-tab {
+                padding: 10px;
+                text-align: left;
+                border-bottom: 1px solid #eee;
+                border-radius: 0;
+            }
         }
         
         a {
@@ -113,129 +176,245 @@
         a:hover {
             text-decoration: underline;
         }
+        
+        .clause-number {
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        
+        .operator-list {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>PRIVACY POLICY</h1>
-        
-        <p class="update-date"><!-- Last updated: [Date] --></p>
-        
-        <div class="section">
-            <p>3DaBuLiuDian ("Company", "we", "our", "us") provides this Privacy Policy to explain how we collect, store, and use the information collected in connection with our software applications and games. We respect the privacy of our users and are committed to protecting user information. You have a right to know our practices regarding the information we may collect and use when you use our services.</p>
+        <div class="nav-tabs">
+            <button class="nav-tab active" data-target="privacy-policy">Privacy Policy</button>
+            <button class="nav-tab" data-target="terms-of-service">Terms of Service</button>
         </div>
         
-        <div class="section">
-            <h2>The types of information we collect and how we collect it</h2>
+        <!-- Privacy Policy Section -->
+        <div id="privacy-policy" class="content-section active">
+            <h1>PRIVACY POLICY</h1>
             
-            <h3>Personal Information</h3>
-            <ul>
-                <li>Company collects the advertising identifier (Apple's IDFA and Google's advertiser ID), and a unique identifier for each user in our mobile games.</li>
-                <li>Company integrates third party SDKs into our services. These SDKs are used for advertising to our users, analyzing service usage, enabling in-app purchases, or providing game services including achievements, leaderboards, and account management. We allow third party operators this collected data solely for internal operations of the service as permitted by applicable rules and laws. This could include, but is not limited to, persistent advertising identifiers, geolocation information, and IP address. We encourage you to review the policies of the third party operators listed below.</li>
-                <li>Some of our services require or allow a user to provide a screen name so they can be identified within the service.</li>
-            </ul>
+            <p class="update-date"><!-- Last updated: [Date] --></p>
             
-            <h3>Non-personal Information</h3>
-            <ul>
-                <li>We allow third parties to collect some information by which users cannot be identified. Non-personal information may include technical information about your device, such as your browser type, screen resolution, device type, language, type of operating system and geo location (only general location). Non-personal information is gathered by third party services while you are accessing the service. They are allowed to use this information to conduct research and analysis, but only for strictly limited purposes. We encourage you to review the policies of the third party operators listed below.</li>
-                <li>Internally, Company also reserves the right to collect anonymous information for research and analysis. This information is generic in nature and cannot be used to individually identify a user. This information is collected each time a user runs one of our services.</li>
-            </ul>
-        </div>
-        
-        <div class="section">
-            <h2>What we do with the personal information we collect</h2>
-            <ul>
-                <li>Advertisers collect data regarding advertisement performance, user's interaction with ads, our apps and user's interests. Collected data may include user's personal information in order to serve users ads and for the third parties' legitimate business interests.</li>
-                <li>When a service asks for a username, it is used to visually identify that user to other users playing the game. Company prohibits any user under the age of 13 from providing individually identifiable information in their username or screen name. This includes, but is not limited to the user's first name, last name, email address, and physical address.</li>
-            </ul>
-        </div>
-        
-        <div class="section">
-            <h2>What we do with the non-personal information we collect</h2>
-            <p>Third party operators are allowed to collect and use non-personal information to conduct research and analysis, or to target advertisements, or other limited purposes. This information cannot be used to individually identify any user. We encourage you to review the policies of the third party operators listed below.</p>
-        </div>
-        
-        <div class="section">
-            <h2>How to opt-out of targeted advertising</h2>
-            <p>If you would like to opt-out of interest-based advertising, you may do so in your mobile device's settings. On iOS, this can be done by turning on the Limit Ad Tracking option under Settings → Privacy → Advertising. On Android, this can typically be found under Settings → Google → Ads → Opt out of Ads Personalization, although the exact location of this setting may differ depending on your device make and Android version.</p>
-            <div class="highlight">
-                <p>To learn more about targeted advertising and additional options that you can take regarding targeted advertising, please visit <a href="https://youradchoices.com/" target="_blank">https://youradchoices.com/</a>.</p>
+            <div class="section">
+                <p>[Your Company Name] ("Company", "we", "our", "us") provides this Privacy Policy to explain how we collect, store, and use the information collected in connection with our software applications and games. We respect the privacy of our users and are committed to protecting user information. You have a right to know our practices regarding the information we may collect and use when you use our services.</p>
+            </div>
+            
+            <div class="section">
+                <h2>The types of information we collect and how we collect it</h2>
+                
+                <h3>Personal Information</h3>
+                <ul>
+                    <li>Company collects the advertising identifier (Apple's IDFA and Google's advertiser ID), and a unique identifier for each user in our mobile games.</li>
+                    <li>Company integrates third party SDKs into our services. These SDKs are used for advertising to our users, analyzing service usage, enabling in-app purchases, or providing game services including achievements, leaderboards, and account management. We allow third party operators this collected data solely for internal operations of the service as permitted by applicable rules and laws. This could include, but is not limited to, persistent advertising identifiers, geolocation information, and IP address. We encourage you to review the policies of the third party operators listed below.</li>
+                    <li>Some of our services require or allow a user to provide a screen name so they can be identified within the service.</li>
+                </ul>
+                
+                <h3>Non-personal Information</h3>
+                <ul>
+                    <li>We allow third parties to collect some information by which users cannot be identified. Non-personal information may include technical information about your device, such as your browser type, screen resolution, device type, language, type of operating system and geo location (only general location). Non-personal information is gathered by third party services while you are accessing the service. They are allowed to use this information to conduct research and analysis, but only for strictly limited purposes. We encourage you to review the policies of the third party operators listed below.</li>
+                    <li>Internally, Company also reserves the right to collect anonymous information for research and analysis. This information is generic in nature and cannot be used to individually identify a user. This information is collected each time a user runs one of our services.</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>What we do with the personal information we collect</h2>
+                <ul>
+                    <li>Advertisers collect data regarding advertisement performance, user's interaction with ads, our apps and user's interests. Collected data may include user's personal information in order to serve users ads and for the third parties' legitimate business interests.</li>
+                    <li>When a service asks for a username, it is used to visually identify that user to other users playing the game. Company prohibits any user under the age of 13 from providing individually identifiable information in their username or screen name. This includes, but is not limited to the user's first name, last name, email address, and physical address.</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>What we do with the non-personal information we collect</h2>
+                <p>Third party operators are allowed to collect and use non-personal information to conduct research and analysis, or to target advertisements, or other limited purposes. This information cannot be used to individually identify any user. We encourage you to review the policies of the third party operators listed below.</p>
+            </div>
+            
+            <div class="section">
+                <h2>How to opt-out of targeted advertising</h2>
+                <p>If you would like to opt-out of interest-based advertising, you may do so in your mobile device's settings. On iOS, this can be done by turning on the Limit Ad Tracking option under Settings → Privacy → Advertising. On Android, this can typically be found under Settings → Google → Ads → Opt out of Ads Personalization, although the exact location of this setting may differ depending on your device make and Android version.</p>
+                <div class="highlight">
+                    <p>To learn more about targeted advertising and additional options that you can take regarding targeted advertising, please visit <a href="https://youradchoices.com/" target="_blank">https://youradchoices.com/</a>.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Children under the age of 13</h2>
+                <p>We understand the importance of protecting the privacy and safety of children using our services. Company collects, uses, and discloses data from kids in the same way as for other users, as described in this policy. Game use of all data is limited to support operations of the Game. If you are a parent of a child under 13 years of age and you believe your child has provided us with personal information, please contact us using the information below and we will delete the information from our systems.</p>
+            </div>
+            
+            <div class="section">
+                <h2>Disclosure of Personal information</h2>
+                <p>The scenarios in which we will share your personal data are as follows:</p>
+                <ul>
+                    <li>We determine that it is required by law;</li>
+                    <li>We have a good faith belief it is necessary to protect our rights or property;</li>
+                    <li>We are participating in a merger, acquisition, liquidation, dissolution or sale of assets;</li>
+                    <li>We have your consent; and</li>
+                    <li>as described above in relation to third-party operators collecting information from our services.</li>
+                </ul>
+                <p>Under no other circumstances will we share, sell, rent, or release your data.</p>
+                <p>You may contact us to request access, change, update or delete your personal information at any time via email. You have the right to these options as well as the right to not be discriminated against for exercising these options. A small fee may be imposed for access and disclosure of your personal information, where permitted under applicable law.</p>
+            </div>
+            
+            <div class="section">
+                <h2>Security</h2>
+                <p>We follow generally accepted industry standards and internal procedures to protect personal information submitted to us, both during transmission and once we receive it.</p>
+            </div>
+            
+            <div class="section">
+                <h2>Third-party Operators</h2>
+                
+                <h3>Advertising Networks:</h3>
+                <p>Company allows advertisements from the Third Party ad networks to be displayed in our services. We make commercially reasonable efforts to ensure that the third party ad networks are configured to comply with applicable privacy laws. If we determine a service to be directed at children under the age of 13, we configure each of these ad networks to be compliant with the Children's Online Privacy Protection Act of 1998 (COPPA). For persons in European Union countries, we also configure networks to be compliant with the General Data Protection Regulation of 2016 (GDPR).</p>
+                
+                <h3>In-App Purchases:</h3>
+                <p>In order to make in-app purchases, a user must use a third party checkout options that we have integrated with our services to finalize and pay for their order. The third party operator's privacy policy and security practices will apply to this process a user's information. We encourage you to read that privacy statement before providing your information.</p>
+                
+                <h3>Game Services:</h3>
+                <p>Many of our services integrate either Apple Game Center or Google Play Game Services. Each of these third-party operators offer their own privacy policy, and we encourage you to review them.</p>
+                
+                <h3>Analytics:</h3>
+                <p>Company makes use of Third Party service in order to measure how users utilize our services so that we may improve them.</p>
+                
+                <div class="operator-list">
+                    <h3>Third Party Operators</h3>
+                    <p>The following is a comprehensive list of the third party operators we currently use in our services, their contact information, and links to their privacy policies. Please note that each individual service we provide will only use a subset of these operators:</p>
+                    
+                    <h4>Apple, iAd, Game Center</h4>
+                    <p><a href="http://www.apple.com/legal/privacy/en-ww/contact/" target="_blank">Contact Apple Privacy</a></p>
+                    <p><a href="http://www.apple.com/privacy/privacy-policy/" target="_blank">Apple Privacy Policy</a></p>
+                    
+                    <h4>Google Play, AdMob, Google Play Game Services, Google Analytics, Google Firebase</h4>
+                    <p><a href="https://support.google.com/googleplay/?hl=en#topic=3364260" target="_blank">Google Play Support</a></p>
+                    <p><a href="https://firebase.google.com/support" target="_blank">Firebase Support</a></p>
+                    <p><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob Help</a></p>
+                    <p><a href="https://www.google.com/intl/en/policies/privacy/" target="_blank">Google Privacy Policy</a></p>
+                    
+                    <h4>Unity Technologies, UnityAds</h4>
+                    <p><a href="https://unity3d.com/legal/privacy-policy" target="_blank">Unity Privacy Policy</a></p>
+                    
+                    <p><em>Note: Update these links based on the specific third-party services you use.</em></p>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <h2>Privacy Policy - Contact Information</h2>
+                <p>If you have any questions about our privacy policy, please contact us via email at: <strong>[your-email@example.com]</strong></p>
+            </div>
+            
+            <div class="back-to-top">
+                <a href="#" class="back-to-top-link">Back to top</a>
             </div>
         </div>
         
-        <div class="section">
-            <h2>Children under the age of 13</h2>
-            <p>We understand the importance of protecting the privacy and safety of children using our services. Company collects, uses, and discloses data from kids in the same way as for other users, as described in this policy. Game use of all data is limited to support operations of the Game. If you are a parent of a child under 13 years of age and you believe your child has provided us with personal information, please contact us using the information below and we will delete the information from our systems.</p>
-        </div>
-        
-        <div class="section">
-            <h2>Disclosure of Personal information</h2>
-            <p>The scenarios in which we will share your personal data are as follows:</p>
-            <ul>
-                <li>We determine that it is required by law;</li>
-                <li>We have a good faith belief it is necessary to protect our rights or property;</li>
-                <li>We are participating in a merger, acquisition, liquidation, dissolution or sale of assets;</li>
-                <li>We have your consent; and</li>
-                <li>as described above in relation to third-party operators collecting information from our services.</li>
-            </ul>
-            <p>Under no other circumstances will we share, sell, rent, or release your data.</p>
-            <p>You may contact us to request access, change, update or delete your personal information at any time via email. You have the right to these options as well as the right to not be discriminated against for exercising these options. A small fee may be imposed for access and disclosure of your personal information, where permitted under applicable law.</p>
-        </div>
-        
-        <div class="section">
-            <h2>Security</h2>
-            <p>We follow generally accepted industry standards and internal procedures to protect personal information submitted to us, both during transmission and once we receive it.</p>
-        </div>
-        
-        <div class="section">
-            <h2>Third-party Operators</h2>
+        <!-- Terms of Service Section -->
+        <div id="terms-of-service" class="content-section">
+            <h1>TERMS OF SERVICE</h1>
             
-            <h3>Advertising Networks:</h3>
-            <p>Company allows advertisements from the Third Party ad networks to be displayed in our services. We make commercially reasonable efforts to ensure that the third party ad networks are configured to comply with applicable privacy laws. If we determine a service to be directed at children under the age of 13, we configure each of these ad networks to be compliant with the Children's Online Privacy Protection Act of 1998 (COPPA). For persons in European Union countries, we also configure networks to be compliant with the General Data Protection Regulation of 2016 (GDPR).</p>
+            <p class="update-date"><!-- Last updated: [Date] --></p>
             
-            <h3>In-App Purchases:</h3>
-            <p>In order to make in-app purchases, a user must use a third party checkout options that we have integrated with our services to finalize and pay for their order. The third party operator's privacy policy and security practices will apply to this process a user's information. We encourage you to read that privacy statement before providing your information.</p>
+            <div class="section">
+                <p>This Terms of Service agreement ("Agreement") is entered into by and between you and [Your Company Name] ("[Your Company Name]", "we", "us", or "our"), and governs your use of any mobile games, websites, or services offered by [Your Company Name] ("Services").</p>
+                
+                <p>By installing, accessing, or using any of the Services, you agree to be bound by this Agreement and our Privacy Policy. If you do not agree, do not use the Services.</p>
+            </div>
             
-            <h3>Game Services:</h3>
-            <p>Many of our services integrate either Apple Game Center or Google Play Game Services. Each of these third-party operators offer their own privacy policy, and we encourage you to review them.</p>
+            <div class="section">
+                <h2><span class="clause-number">1.</span> Age Requirements</h2>
+                <p>The Services are not intended for children under 13. By using the Services, you confirm that you are at least 13 years old. If you are between 13 and 18, you confirm that you have permission from your legal guardian to use the Services.</p>
+            </div>
             
-            <h3>Analytics:</h3>
-            <p>Company makes use of Third Party service in order to measure how users utilize our services so that we may improve them.</p>
+            <div class="section">
+                <h2><span class="clause-number">2.</span> Use of Services</h2>
+                <p>You may use the Services for personal, non-commercial entertainment purposes only. You agree not to use the Services for any illegal or unauthorized purpose, including but not limited to reverse engineering, exploiting bugs, or interfering with gameplay experience of others.</p>
+            </div>
+            
+            <div class="section">
+                <h2><span class="clause-number">3.</span> In-App Purchases and Advertising</h2>
+                <p>The Services may include optional in-app purchases, which are processed securely via the Apple App Store or Google Play. By making a purchase, you also agree to the applicable terms and policies of those platforms. [Your Company Name] does not process or store payment information. Refunds, billing issues, or disputes regarding purchases must be handled directly with Apple or Google.</p>
+            </div>
+            
+            <div class="section">
+                <h2><span class="clause-number">4.</span> Intellectual Property</h2>
+                <p>All content in the Services, including graphics, gameplay, logos, and other intellectual property, is owned by or licensed to [Your Company Name] and is protected by applicable copyright and trademark laws. You may not reuse, distribute, or modify this content without permission.</p>
+            </div>
+            
+            <div class="section">
+                <h2><span class="clause-number">5.</span> Termination</h2>
+                <p>We reserve the right to suspend or terminate access to the Services at any time, with or without notice, especially in the case of suspected abuse or violation of these terms.</p>
+            </div>
+            
+            <div class="section">
+                <h2><span class="clause-number">6.</span> No Warranty</h2>
+                <p>The Services are provided "as is" without warranties of any kind. We do not guarantee that the Services will be available at all times or be free of bugs or errors.</p>
+            </div>
+            
+            <div class="section">
+                <h2><span class="clause-number">7.</span> Limitation of Liability</h2>
+                <p>To the fullest extent permitted by law, we shall not be liable for any indirect, incidental, or consequential damages arising out of or in connection with your use of the Services.</p>
+            </div>
+            
+            <div class="section">
+                <h2><span class="clause-number">8.</span> Changes to the Terms</h2>
+                <p>We may update this Agreement from time to time. Continued use of the Services after changes are made constitutes acceptance of the new terms.</p>
+            </div>
+            
+            <div class="section">
+                <h2><span class="clause-number">9.</span> General Data Protection Regulation (EU)</h2>
+                <p>If you are located in the European Union, you have additional rights under the General Data Protection Regulation (GDPR), including the right to access, correct, erase, or restrict the processing of your personal data. You may exercise these rights at any time by contacting us at [your-email@example.com].</p>
+            </div>
+            
+            <div class="section">
+                <h2><span class="clause-number">10.</span> Contact</h2>
+                <p>If you have any questions about these Terms of Service, you may contact us at [your-email@example.com].</p>
+            </div>
             
             <div class="highlight">
-                <h3>Third Party Operators</h3>
-                <p>The following is a comprehensive list of the third party operators we currently use in our services, their contact information, and links to their privacy policies. Please note that each individual service we provide will only use a subset of these operators:</p>
-                
-                <h4>Apple, iAd, Game Center</h4>
-                <p><a href="http://www.apple.com/legal/privacy/en-ww/contact/" target="_blank">Contact Apple Privacy</a></p>
-                <p><a href="http://www.apple.com/privacy/privacy-policy/" target="_blank">Apple Privacy Policy</a></p>
-                
-                <h4>Google Play, AdMob, Google Play Game Services, Google Analytics, Google Firebase</h4>
-                <p><a href="https://support.google.com/googleplay/?hl=en#topic=3364260" target="_blank">Google Play Support</a></p>
-                <p><a href="https://firebase.google.com/support" target="_blank">Firebase Support</a></p>
-                <p><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob Help</a></p>
-                <p><a href="https://www.google.com/intl/en/policies/privacy/" target="_blank">Google Privacy Policy</a></p>
-                
-                <h4>Unity Technologies, UnityAds</h4>
-                <p><a href="https://unity3d.com/legal/privacy-policy" target="_blank">Unity Privacy Policy</a></p>
-                
-                <p><em>Note: Update these links based on the specific third-party services you use.</em></p>
+                <p>These Terms of Service are intended to provide a general framework. For legal concerns or specific questions, users are encouraged to reach out via the contact provided.</p>
             </div>
-        </div>
-        
-        <div class="contact-info">
-            <h2>Privacy Policy - Contact Information</h2>
-            <p>If you have any questions about our privacy policy, please contact us via email at: <strong>xas_xas@126.com</strong></p>
-        </div>
-        
-        <div class="section">
-            <p><i>These Terms of Service are intended to provide a general framework. For legal concerns or specific questions, users are encouraged to reach out via the contact provided.</i></p>
+            
+            <div class="back-to-top">
+                <a href="#" class="back-to-top-link">Back to top</a>
+            </div>
         </div>
     </div>
     
     <script>
-        // Optional: Add last updated date automatically
         document.addEventListener('DOMContentLoaded', function() {
+            // Tab navigation
+            const tabs = document.querySelectorAll('.nav-tab');
+            const sections = document.querySelectorAll('.content-section');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetId = tab.getAttribute('data-target');
+                    
+                    // Update active tab
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Show target section
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    document.getElementById(targetId).classList.add('active');
+                    
+                    // Scroll to top of the section
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+            
+            // Set current date
             const updateDateElements = document.querySelectorAll('.update-date');
             const currentDate = new Date();
             const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -247,11 +426,30 @@
                 }
             });
             
-            // Optional: Make external links open in new tab
+            // Back to top functionality
+            const backToTopLinks = document.querySelectorAll('.back-to-top-link');
+            backToTopLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+            
+            // Make external links open in new tab
             document.querySelectorAll('a[href^="http"]').forEach(link => {
                 link.setAttribute('target', '_blank');
                 link.setAttribute('rel', 'noopener noreferrer');
             });
+            
+            // Auto-replace placeholders with URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const companyName = urlParams.get('company') || '[Your Company Name]';
+            const companyEmail = urlParams.get('email') || '[your-email@example.com]';
+            
+            // Replace placeholders throughout the document
+            document.body.innerHTML = document.body.innerHTML
+                .replace(/\[Your Company Name\]/g, companyName)
+                .replace(/\[your-email@example\.com\]/g, companyEmail);
         });
     </script>
 </body>
