@@ -202,10 +202,10 @@
         <div id="privacy-policy" class="content-section active">
             <h1>PRIVACY POLICY</h1>
             
-            <p class="update-date"><!-- Last updated: [Date] --></p>
+            <p class="update-date"></p>
             
             <div class="section">
-                <p>[Your Company Name] ("Company", "we", "our", "us") provides this Privacy Policy to explain how we collect, store, and use the information collected in connection with our software applications and games. We respect the privacy of our users and are committed to protecting user information. You have a right to know our practices regarding the information we may collect and use when you use our services.</p>
+                <p><span class="company-name">[Your Company Name]</span> ("Company", "we", "our", "us") provides this Privacy Policy to explain how we collect, store, and use the information collected in connection with our software applications and games. We respect the privacy of our users and are committed to protecting user information. You have a right to know our practices regarding the information we may collect and use when you use our services.</p>
             </div>
             
             <div class="section">
@@ -308,7 +308,7 @@
             
             <div class="contact-info">
                 <h2>Privacy Policy - Contact Information</h2>
-                <p>If you have any questions about our privacy policy, please contact us via email at: <strong>[your-email@example.com]</strong></p>
+                <p>If you have any questions about our privacy policy, please contact us via email at: <strong class="company-email">[your-email@example.com]</strong></p>
             </div>
             
             <div class="back-to-top">
@@ -320,10 +320,10 @@
         <div id="terms-of-service" class="content-section">
             <h1>TERMS OF SERVICE</h1>
             
-            <p class="update-date"><!-- Last updated: [Date] --></p>
+            <p class="update-date"></p>
             
             <div class="section">
-                <p>This Terms of Service agreement ("Agreement") is entered into by and between you and [Your Company Name] ("[Your Company Name]", "we", "us", or "our"), and governs your use of any mobile games, websites, or services offered by [Your Company Name] ("Services").</p>
+                <p>This Terms of Service agreement ("Agreement") is entered into by and between you and <span class="company-name">[Your Company Name]</span> ("<span class="company-name">[Your Company Name]</span>", "we", "us", or "our"), and governs your use of any mobile games, websites, or services offered by <span class="company-name">[Your Company Name]</span> ("Services").</p>
                 
                 <p>By installing, accessing, or using any of the Services, you agree to be bound by this Agreement and our Privacy Policy. If you do not agree, do not use the Services.</p>
             </div>
@@ -340,12 +340,12 @@
             
             <div class="section">
                 <h2><span class="clause-number">3.</span> In-App Purchases and Advertising</h2>
-                <p>The Services may include optional in-app purchases, which are processed securely via the Apple App Store or Google Play. By making a purchase, you also agree to the applicable terms and policies of those platforms. [Your Company Name] does not process or store payment information. Refunds, billing issues, or disputes regarding purchases must be handled directly with Apple or Google.</p>
+                <p>The Services may include optional in-app purchases, which are processed securely via the Apple App Store or Google Play. By making a purchase, you also agree to the applicable terms and policies of those platforms. <span class="company-name">[Your Company Name]</span> does not process or store payment information. Refunds, billing issues, or disputes regarding purchases must be handled directly with Apple or Google.</p>
             </div>
             
             <div class="section">
                 <h2><span class="clause-number">4.</span> Intellectual Property</h2>
-                <p>All content in the Services, including graphics, gameplay, logos, and other intellectual property, is owned by or licensed to [Your Company Name] and is protected by applicable copyright and trademark laws. You may not reuse, distribute, or modify this content without permission.</p>
+                <p>All content in the Services, including graphics, gameplay, logos, and other intellectual property, is owned by or licensed to <span class="company-name">[Your Company Name]</span> and is protected by applicable copyright and trademark laws. You may not reuse, distribute, or modify this content without permission.</p>
             </div>
             
             <div class="section">
@@ -370,12 +370,12 @@
             
             <div class="section">
                 <h2><span class="clause-number">9.</span> General Data Protection Regulation (EU)</h2>
-                <p>If you are located in the European Union, you have additional rights under the General Data Protection Regulation (GDPR), including the right to access, correct, erase, or restrict the processing of your personal data. You may exercise these rights at any time by contacting us at [your-email@example.com].</p>
+                <p>If you are located in the European Union, you have additional rights under the General Data Protection Regulation (GDPR), including the right to access, correct, erase, or restrict the processing of your personal data. You may exercise these rights at any time by contacting us at <span class="company-email">[your-email@example.com]</span>.</p>
             </div>
             
             <div class="section">
                 <h2><span class="clause-number">10.</span> Contact</h2>
-                <p>If you have any questions about these Terms of Service, you may contact us at [your-email@example.com].</p>
+                <p>If you have any questions about these Terms of Service, you may contact us at <span class="company-email">[your-email@example.com]</span>.</p>
             </div>
             
             <div class="highlight">
@@ -390,43 +390,78 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Tab navigation
-            const tabs = document.querySelectorAll('.nav-tab');
-            const sections = document.querySelectorAll('.content-section');
+            console.log('Document loaded, initializing tabs...');
             
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const targetId = tab.getAttribute('data-target');
-                    
-                    // Update active tab
-                    tabs.forEach(t => t.classList.remove('active'));
-                    tab.classList.add('active');
-                    
-                    // Show target section
-                    sections.forEach(section => {
-                        section.classList.remove('active');
-                    });
-                    
-                    document.getElementById(targetId).classList.add('active');
-                    
-                    // Scroll to top of the section
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
+            // 初始化变量
+            let companyName = '[Your Company Name]';
+            let companyEmail = '[your-email@example.com]';
+            
+            // 检查URL参数
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlCompany = urlParams.get('company');
+            const urlEmail = urlParams.get('email');
+            
+            if (urlCompany) companyName = urlCompany;
+            if (urlEmail) companyEmail = urlEmail;
+            
+            // 替换占位符
+            console.log('Replacing placeholders with:', companyName, companyEmail);
+            document.querySelectorAll('.company-name').forEach(el => {
+                el.textContent = companyName;
             });
             
-            // Set current date
+            document.querySelectorAll('.company-email').forEach(el => {
+                el.textContent = companyEmail;
+            });
+            
+            // 设置当前日期
             const updateDateElements = document.querySelectorAll('.update-date');
             const currentDate = new Date();
             const options = { year: 'numeric', month: 'long', day: 'numeric' };
             const formattedDate = currentDate.toLocaleDateString('en-US', options);
             
             updateDateElements.forEach(element => {
-                if (element.textContent.includes('[Date]')) {
-                    element.textContent = `Last updated: ${formattedDate}`;
-                }
+                element.textContent = `Last updated: ${formattedDate}`;
             });
             
-            // Back to top functionality
+            // Tab切换功能
+            console.log('Setting up tab switching...');
+            const tabs = document.querySelectorAll('.nav-tab');
+            const sections = document.querySelectorAll('.content-section');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    console.log('Tab clicked:', this.getAttribute('data-target'));
+                    
+                    // 移除所有tab的active类
+                    tabs.forEach(t => t.classList.remove('active'));
+                    
+                    // 添加当前tab的active类
+                    this.classList.add('active');
+                    
+                    // 获取目标section的id
+                    const targetId = this.getAttribute('data-target');
+                    
+                    // 隐藏所有sections
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    // 显示目标section
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                        console.log('Showing section:', targetId);
+                    } else {
+                        console.error('Target section not found:', targetId);
+                    }
+                    
+                    // 滚动到顶部
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+            
+            // 返回顶部功能
             const backToTopLinks = document.querySelectorAll('.back-to-top-link');
             backToTopLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
@@ -435,21 +470,13 @@
                 });
             });
             
-            // Make external links open in new tab
+            // 设置外部链接
             document.querySelectorAll('a[href^="http"]').forEach(link => {
                 link.setAttribute('target', '_blank');
                 link.setAttribute('rel', 'noopener noreferrer');
             });
             
-            // Auto-replace placeholders with URL parameters
-            const urlParams = new URLSearchParams(window.location.search);
-            const companyName = urlParams.get('company') || '[Your Company Name]';
-            const companyEmail = urlParams.get('email') || '[your-email@example.com]';
-            
-            // Replace placeholders throughout the document
-            document.body.innerHTML = document.body.innerHTML
-                .replace(/\[Your Company Name\]/g, companyName)
-                .replace(/\[your-email@example\.com\]/g, companyEmail);
+            console.log('Initialization complete');
         });
     </script>
 </body>
